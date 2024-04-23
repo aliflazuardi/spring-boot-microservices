@@ -32,6 +32,10 @@ dependencies {
 	testImplementation "org.testcontainers:junit-jupiter:1.19.7"
 }
 
+test {
+	jvmArgs("-XX:+EnableDynamicAgentLoading", "-Djdk.instrument.traceUsage") // add this
+}
+
 tasks.named('test') {
 	useJUnitPlatform()
 }
